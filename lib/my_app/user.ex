@@ -19,7 +19,7 @@ defmodule MyApp.User do
   def changeset(user, attrs) do
     user
     |> cast(attrs, [:first_name, :last_name, :email, :cep, :city, :uf])
-    |> validate_required([:first_name, :last_name, :email, :cep, :city, :uf])
+    |> validate_required([:first_name, :last_name, :email, :cep])
     |> validate_length(:cep, is: 8)
     |> validate_format(:email, ~r/@/)
   end

@@ -34,7 +34,8 @@ defmodule MyApp.Users.Create do
 
     with {:ok, %User{}} <- User.validate_before_insert(changeset),
          {:ok, %{"localidade" => city, "uf" => uf}} <- Client.get_cep_info(cep),
-         %{} = _params <- Map.merge(params, %{city: city, uf: uf}),
+         params <- Map.merge(params, %{city: city, uf: uf}),
+         changeset <- User.changeset(%User{}, params),
          {:ok, %User{}} = user <- Repo.insert(changeset) do
       user
     end

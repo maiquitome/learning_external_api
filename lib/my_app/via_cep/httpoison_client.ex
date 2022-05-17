@@ -32,7 +32,7 @@ defmodule MyApp.ViaCep.HttpoisonClient do
     {:error, %{status: :bad_request, result: "Invalid CEP!"}}
   end
 
-  defp handle_get({:error, reason}) do
+  defp handle_get({:error, %Error{id: _id, reason: reason}}) do
     {:error, %{status: :bad_request, result: reason}}
   end
 end

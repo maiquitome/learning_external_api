@@ -51,7 +51,8 @@ defmodule MyApp.MixProject do
       {:plug_cowboy, "~> 2.5"},
       {:tesla, "~> 1.4"},
       {:hackney, "~> 1.17"},
-      {:httpoison, "~> 1.8"}
+      {:httpoison, "~> 1.8"},
+      {:bypass, "~> 2.1", only: :test}
     ]
   end
 

@@ -52,7 +52,8 @@ defmodule MyApp.MixProject do
       {:tesla, "~> 1.4"},
       {:hackney, "~> 1.17"},
       {:httpoison, "~> 1.8"},
-      {:bypass, "~> 2.1", only: :test}
+      {:bypass, "~> 2.1", only: :test},
+      {:mox, "~> 1.0", only: :test}
     ]
   end
 
